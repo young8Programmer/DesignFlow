@@ -1,8 +1,7 @@
-import { Controller, Get, Query, Post, Body, UseGuards } from '@nestjs/common';
+import { Controller, Get, Query, Post, Body, UseGuards, Request } from '@nestjs/common';
 import { AssetsService } from './assets.service';
-import { AssetType } from './entities/asset.entity';
+import { AssetType, Asset } from './entities/asset.entity';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
-import { Request } from 'express';
 
 @Controller('assets')
 export class AssetsController {

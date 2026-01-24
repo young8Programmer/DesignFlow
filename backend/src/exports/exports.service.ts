@@ -68,7 +68,7 @@ export class ExportsService {
     // Render canvas data (simplified - in production, you'd need to fully render Fabric.js objects)
     await this.renderCanvasData(ctx, design.canvasData, design.width, design.height);
 
-    return canvas.toBuffer('image/png', { quality });
+    return canvas.toBuffer('image/png');
   }
 
   private canvasToHTML(canvasData: any, width: number, height: number): string {

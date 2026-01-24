@@ -22,8 +22,8 @@ export class TypeOrmConfigService implements TypeOrmOptionsFactory {
       password: this.configService.get('DB_PASSWORD', 'postgres'),
       database: this.configService.get('DB_DATABASE', 'designflow'),
       entities: [User, Design, Template, Payment, Wallet, Subscription, Asset],
-      synchronize: this.configService.get('NODE_ENV') === 'development',
-      logging: this.configService.get('NODE_ENV') === 'development',
+      synchronize: true, // Auto-create tables in development
+      logging: false, // Disable SQL query logging
       migrations: ['dist/migrations/*.js'],
       migrationsRun: false,
     };
